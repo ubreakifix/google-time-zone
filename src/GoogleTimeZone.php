@@ -6,6 +6,7 @@ use DateTime;
 use DateTimeInterface;
 use GuzzleHttp\Client;
 use Spatie\GoogleTimeZone\Exceptions\GoogleTimeZoneException;
+use stdClass;
 
 class GoogleTimeZone
 {
@@ -87,7 +88,7 @@ class GoogleTimeZone
         ];
     }
 
-    protected function formatResponse(object $timezoneResponse): array
+    protected function formatResponse(stdClass $timezoneResponse): array
     {
         return [
             'dstOffset' => $timezoneResponse->dstOffset,
